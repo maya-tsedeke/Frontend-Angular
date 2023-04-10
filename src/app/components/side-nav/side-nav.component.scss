@@ -1,0 +1,97 @@
+/* Side Navigation Bar */
+.side-nav-content {
+    background-color: #222d32;
+    color: #b8c7ce;
+    width: 230px;
+    margin-top: 10px;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .side-nav-content .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .side-nav-content .nav-list-item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .side-nav-content .nav-list-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  .side-nav-content .nav-list-item i {
+    font-size: 20px;
+    height: 25px;
+    width: 25px;
+    margin-right: 15px;
+    margin-left: 10px;
+    text-align: center;
+    line-height: 25px;
+  }
+  
+  .side-nav-content .nav-list-item span {
+    width: 170px;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+  .side-nav-content .nav-list-item a {
+    text-decoration: none;
+    color: #b8c7ce;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .side-nav-content .nav-list-item a:hover {
+    color: #fff;
+  }
+  
+  .side-nav-content .nav-list-item.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+  }
+  
+  /* Sidebar toggle button */
+  .side-nav-toggle {
+    background-color: #222d32;
+    color: #b8c7ce;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .side-nav-toggle:hover {
+    background-color: #1e282c;
+  }
+  
+  .side-nav-toggle i {
+    font-size: 20px;
+  }
+  
+  /* Sidebar open state */
+  .side-nav-open .side-nav-content {
+    width: 230px;
+  }
+  
+  .side-nav-open .side-nav-toggle i {
+    transform: rotate(-180deg);
+  }
+  
+  /* Main content area */
+  .main-content {
+    margin-top: 10px;
+    margin-left: 250px;
+  }
+  

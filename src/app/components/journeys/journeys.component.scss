@@ -1,0 +1,189 @@
+.session-container {
+    position: relative;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+  }
+  
+  .cell1 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cell1 h2 {
+    margin-top: 0;
+  }
+  
+  .cell1 .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .cell1 label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .cell1 .custom {
+    width: 100%;
+  }
+  
+  .cell1 button {
+    margin-top: 10px;
+  }
+  
+  .cell2 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .cell2 .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+  }
+  
+  .cell2 .row .col-6 {
+    width: 100%;
+  }
+  
+  .cell2 .row .col-6:last-child {
+    padding-left: 2%;
+  }
+  
+  .cell2 button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .cell2 .table {
+    width: 100%;
+  }
+  
+  .cell2 .thead {
+    display: flex;
+    background-color: #f7f7f7;
+    font-weight: bold;
+  }
+  
+  .cell2 .thead .tr .th {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .cell2 .tbody .tr {
+    display: flex;
+    border-bottom: 1px solid #f7f7f7;
+  }
+  
+  .cell2 .tbody .tr:last-child {
+    border-bottom: none;
+  }
+  
+  .cell2 .tbody .tr .td {
+    padding: 10px;
+    text-align: left;
+    width: 20%;
+  }
+  
+  .cell2 .tbody .tr .td:last-child {
+    width: 40%;
+  }
+  
+  .cell2 .tbody button {
+    margin-top: 0;
+  }
+  
+  .cell3 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cell3 h2 {
+    margin-top: 0;
+  }
+  
+  .timer {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .cell4 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cell4 h2 {
+    margin-top: 0;
+  }
+.cell1, .cell2, .cell3, .cell4 {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  box-shadow: 0 0 0px rgba(247, 245, 245, 0.836);
+  padding: 20px;
+  margin-bottom:20px;
+  
+}
+
+.cell1 h2,
+.cell2 h2,
+.cell3 h2,
+.cell4 h2 {
+background-color: #555;
+color: #fff;
+padding: 10px;
+margin-top: 0;
+border-radius: 5px 5px 0 0;
+}
+
+.cell2 button,
+.cell2 .td:last-child button {
+margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+.session-container {
+padding: 10px;
+}
+
+.cell1,
+.cell2,
+.cell3,
+.cell4 {
+padding: 10px;
+}
+
+.cell1 h2,
+.cell2 h2,
+.cell3 h2,
+.cell4 h2 {
+font-size: 18px;
+padding: 5px;
+}
+
+.cell2 .row {
+flex-wrap: wrap;
+}
+
+.cell2 .row .col-6 {
+width: 100%;
+padding-right: 10;
+margin-bottom: 30px;
+}
+}

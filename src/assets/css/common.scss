@@ -1,0 +1,297 @@
+.outer{
+    height: 100vh;
+    
+    background-size: cover;
+    background-position: center;
+}
+
+.panel-heading{
+    text-align: center;
+    margin-bottom: 10px;
+}
+#forget{
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: none;
+}
+.form-inline label{
+    padding-left: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+.btn{
+    margin-top: 20px;
+    border-radius: 15px;
+}
+.panel{
+    min-height: 380px;
+    box-shadow: 20px 20px 80px rgb(218,218,218);
+    border-radius: 12px;
+    margin-top: 100px;
+}
+.input-field{
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    color: #4343ff;
+
+}
+.input-field.error{
+    border: 1px solid red;
+    color: red;
+}
+input[type='text'],
+input[type='password']{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}
+.fa-eye-slash.btn{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+}
+.bordert{
+    border-top: 1px solid #aaa;
+    position: relative;
+}
+.bordert:after{
+    content: "or connect width";
+    position: absolute;
+    top: -13px;
+    left: 33%;
+    background-color: #fff;
+    padding: 0 8xp;
+}
+
+/* Additional CSS for the new layout */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    }
+    
+    .col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    }
+    
+    .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    }
+    
+    .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    }
+    
+    .session-container {
+    position: relative;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: auto;
+    }
+    
+    .journey-list {
+    margin-top: 10px;
+    }
+    
+    .journey-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f7f7f7;
+    padding: 10px 0;
+    }
+    
+    .journey-item:last-child {
+    border-bottom: none;
+    }
+    
+    .journey-item .journey-id,
+    .journey-item .journey-station {
+    flex: 1;
+    }
+    
+    .journey-item .journey-status {
+    flex: 0 0 320px;
+    text-align: center;
+    }
+    
+    .journey-item .journey-actions {
+    flex: 0 0 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .journey-item .journey-actions button {
+    margin-left: 10px;
+    }
+    
+    .timer-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      
+      .timer-container h2 {
+        margin-top: 0;
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+        font-weight: bold;
+      }
+      
+      .timer {
+        font-size: 24px;
+        text-align: center;
+      }
+      
+      #map {
+        height: 400px;
+        margin-top: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .dot-animation {
+        display: inline-block;
+        overflow: hidden;
+        animation: dots 1s steps(5, end) infinite;
+      }
+      .fa-biking {
+        color: #555;
+        font-size: 20px;
+        margin-left: 5px;
+      }
+      .journey-id {
+        display: flex;
+        align-items: center;
+      }
+      
+      .journey-id .dot-animation {
+        margin-left: 5px;
+        animation: dots 1.4s infinite linear;
+        color: #555;
+      }
+      
+      .journey-id.in-progress {
+        background-color: #ffc107; /* or any other background color of your choice */
+      }
+      
+      @keyframes dots {
+        0%, 20% {
+          color: rgba(0, 0, 0, 0);
+          text-shadow: .25em 0 0 rgba(0, 0, 0, 0), .5em 0 0 rgba(0, 0, 0, 0);
+        }
+        40% {
+          color: #555;
+          text-shadow: .25em 0 0 rgba(0, 0, 0, 0), .5em 0 0 rgba(0, 0, 0, 0);
+        }
+        60% {
+          text-shadow: .25em 0 0 #555, .5em 0 0 rgba(0, 0, 0, 0);
+        }
+        80%, 100% {
+          text-shadow: .25em 0 0 #555, .5em 0 0 #555;
+        }
+      }
+      .journey-id button {
+        margin-right: 10px;
+        width: auto;
+      }
+      
+      .journey-id button.btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+      }
+      
+      .journey-id button.btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #5a6268;
+        
+      }
+      
+      .journey-id button.btn-secondary:focus {
+        box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+      }
+      
+      .journey-id button.btn-secondary:active {
+        background-color: #545b62;
+        border-color: #4e555b;
+        
+      }
+      
+      .journey-id button[disabled] {
+        background-color: #28a745;
+        border-color: #28a745;
+        width: auto;
+        border: 0px;
+        font-weight: bolder;
+      }
+      
+      .journey-id button[disabled]:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+      }
+      
+      .journey-id button.complete {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      
+      .journey-id button.complete:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+      }
+      
+      .journey-id button.complete:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+      }
+      
+      .journey-id button.complete:active {
+        background-color: #0062cc;
+        border-color: #005cbf;
+      }
+      /* ng-select */
+    .custom {
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: #f9f9f9;
+      font-size: 16px;
+      padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+      }
+      
+      ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+        background-color: #f2f2f2;
+      }
+      ::ng-deep .ng-select .ng-placeholder {
+        margin-right: 30px; /* adjust the value to your liking */
+      }

@@ -1,0 +1,72 @@
+<div class="container-fluid g-0">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="search">Search:</label>
+        <input type="text" class="form-control" [(ngModel)]="searchValue" (keyup)="applyFilter()">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="limit">Row Limit:</label>
+        <input type="number" class="form-control" id="limit" [(ngModel)]="rowLimit" (ngModelChange)="onRowLimitChange()" (keyup)="applyFilter()">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        
+        <button class="btn btn-sm btn-primary mr-2" title="Create" (click)="create()" >
+          Create
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th (click)="sort('id')">Station ID <i class="fas fa-sort-{{orderBy === 'id' ? sortDirection : 'both'}}"></i>
+          </th>
+          <th (click)="sort('name')">Name <i class="fas fa-sort-{{orderBy === 'name' ? sortDirection : 'both'}}"></i>
+          </th>
+          <th (click)="sort('address')">Address <i
+              class="fas fa-sort-{{orderBy === 'address' ? sortDirection : 'both'}}"></i></th>
+          <th (click)="sort('kaupunki')">City <i
+              class="fas fa-sort-{{orderBy === 'kaupunki' ? sortDirection : 'both'}}"></i></th>
+          <th (click)="sort('x')">Latitude <i class="fas fa-sort-{{orderBy === 'x' ? sortDirection : 'both'}}"></i></th>
+          <th (click)="sort('y')">Longitude <i class="fas fa-sort-{{orderBy === 'y' ? sortDirection : 'both'}}"></i>
+          </th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows">
+          <td>{{ row.id }}</td>
+          <td>{{ row.name }}</td>
+          <td>{{ row.address }}</td>
+          <td>{{ row.kaupunki }}</td>
+          <td>{{ row.x }}</td>
+          <td>{{ row.y }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary mr-2" title="View" (click)="view(row)">
+              <i class="fas fa-map-marker-alt"></i>
+            </button>
+            <button class="btn btn-sm btn-success mr-2" title="Edit" (click)="edit(row)">
+              <span class="bi bi-pencil"></span>
+            </button>
+            <app-deletestation [row]="row" (deleteClicked)="delete(row)" class="delete-button">
+              <span class="bi bi-trash"></span>
+            </app-deletestation>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button [disabled]="currentPage === 1" (click)="prevPage()">Previous</button>
+    <span>{{ currentPage }} of {{ totalPages }}</span>
+    <button [disabled]="currentPage === totalPages || totalPages === 0" (click)="nextPage()">Next</button>
+  </div>
+</div>

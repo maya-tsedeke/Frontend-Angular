@@ -1,0 +1,175 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="stationForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="nimi">Nimi</label>
+            <div class="input-group"
+              [class.error]="stationForm.controls['nimi'].dirty && stationForm.hasError('required','nimi')">
+              <input type="text" class="form-control" id="nimi" formControlName="nimi">
+            </div>
+            <small *ngIf="stationForm.controls['nimi'].dirty && stationForm.hasError('required','nimi')"
+              class="text-danger">
+              Password is required!
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="namn">Namn</label>
+            <div class="input-group"
+              [class.has-error]="stationForm.controls['namn'].invalid && (stationForm.controls['namn'].dirty || stationForm.controls['namn'].touched)">
+              <input type="text" class="form-control" id="namn" formControlName="namn">
+            </div>
+            <small
+              *ngIf="stationForm.controls['namn'].invalid && (stationForm.controls['namn'].dirty || stationForm.controls['namn'].touched)"
+              class="text-danger">
+              Namn is required!
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="namn">Name</label>
+            <div class="input-group"
+              [class.has-error]="stationForm.controls['namn'].invalid && (stationForm.controls['namn'].dirty || stationForm.controls['namn'].touched)">
+              <input type="text" class="form-control" id="namn" formControlName="name">
+            </div>
+            <small
+              *ngIf="stationForm.controls['namn'].invalid && (stationForm.controls['namn'].dirty || stationForm.controls['namn'].touched)"
+              class="text-danger">
+              Name is required!
+            </small>
+          </div>
+
+          <div class="form-group">
+            <label for="kaupunki">Kaupunki</label>
+            <div class="input-group"
+              [class.has-error]="stationForm.controls['kaupunki'].invalid && (stationForm.controls['kaupunki'].dirty || stationForm.controls['kaupunki'].touched)">
+              <input type="text" class="form-control" id="kaupunki" formControlName="kaupunki">
+            </div>
+            <small
+              *ngIf="stationForm.controls['kaupunki'].invalid && (stationForm.controls['kaupunki'].dirty || stationForm.controls['kaupunki'].touched)"
+              class="text-danger">
+              City name is required!
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="operaattor">Operaattor</label>
+            <div class="input-group"
+              [class.has-error]="stationForm.controls['operaattor'].invalid && (stationForm.controls['operaattor'].dirty || stationForm.controls['operaattor'].touched)">
+              <input type="text" class="form-control" id="operaattor" formControlName="operaattor">
+              <span class="input-group-text">
+                <i class="fas fa-globe"></i>
+              </span>
+            </div>
+            <small
+              *ngIf="stationForm.controls['operaattor'].invalid && (stationForm.controls['operaattor'].dirty || stationForm.controls['operaattor'].touched)"
+              class="text-danger">
+              Operator is required!
+            </small>
+          </div>
+        </div>
+        <div class="col-md-6">
+
+          <div class="form-group">
+            <label for="osoite">Osoite</label>
+            <div class="input-group"
+              [class.has-error]="stationForm.controls['osoite'].invalid && (stationForm.controls['osoite'].dirty || stationForm.controls['osoite'].touched)">
+              <input type="text" class="form-control" id="osoite" formControlName="osoite">
+            </div>
+            <small
+              *ngIf="stationForm.controls['osoite'].invalid && (stationForm.controls['osoite'].dirty || stationForm.controls['osoite'].touched)"
+              class="text-danger">
+              Osoite is required!
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <div class="input-group"
+              [class.has-error]="stationForm.controls['address'].invalid && (stationForm.controls['address'].dirty || stationForm.controls['address'].touched)">
+              <input type="text" class="form-control" id="address" formControlName="address">
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i class="fas fa-map-marker-alt"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <small
+            *ngIf="stationForm.controls['address'].invalid && (stationForm.controls['address'].dirty || stationForm.controls['address'].touched)"
+            class="text-danger">
+            Address (street) is required!
+          </small>
+          <div class="form-group">
+            <label for="stad">Stad</label>
+            <div class="input-group"
+              [class.has-error]="stationForm.controls['stad'].invalid && (stationForm.controls['stad'].dirty || stationForm.controls['stad'].touched)">
+              <input type="text" class="form-control" id="stad" formControlName="stad">
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i class="fas fa-city"></i>
+                </span>
+              </div>
+            </div>
+            <small
+              *ngIf="stationForm.controls['stad'].invalid && (stationForm.controls['stad'].dirty || stationForm.controls['stad'].touched)"
+              class="text-danger">
+              Stad is required!
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="kapasiteet">Kapasiteet</label>
+            <div class="input-group"
+              [class.has-error]="stationForm.controls['kapasiteet'].invalid && (stationForm.controls['kapasiteet'].dirty || stationForm.controls['kapasiteet'].touched)">
+
+              <input type="number" class="form-control" id="kapasiteet" formControlName="kapasiteet">
+              <div class="input-group-append">
+              </div>
+            </div>
+            <small
+              *ngIf="stationForm.controls['kapasiteet'].invalid && (stationForm.controls['kapasiteet'].dirty || stationForm.controls['kapasiteet'].touched)"
+              class="text-danger">
+              Kapasiteet name is required!
+            </small>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="x">Longitude</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="x" formControlName="x">
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="y">Latitude</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="y" formControlName="y">
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="fas fa-long-arrow-alt-up"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <button [hidden]="updateDisabled" type="submit" class="btn btn-primary">Submit</button>
+            <button [hidden]="!updateDisabled" type="button" class="btn btn-primary" (click)="update()">Update</button>
+          </div>
+          <div class="col-md-6">
+            <button type="button" class="btn btn-primary" (click)="gotoList()">Go back</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

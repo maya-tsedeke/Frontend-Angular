@@ -1,0 +1,97 @@
+<div class="container-fluid g-0">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="map-container">
+        <h2>Station location on the map <strong>: </strong>({{ stationDetails?.location?.x }}, {{ stationDetails?.location?.y }}),<strong>Address: </strong>{{ stationDetails?.address }}
+        </h2>
+        <div class="map-wrapper">
+          <mgl-map
+            [style]="'https://api.maptiler.com/maps/streets/style.json?key=sfuWk9tJycblOOcoICP2'"
+            [zoom]="[20]"
+            [center]="[stationDetails?.location?.x || 0, stationDetails?.location?.y || 0]">
+            <mgl-marker [lngLat]="[stationDetails?.location?.x || 0, stationDetails?.location?.y || 0]">
+              <div class="marker-label">
+                <p>{{ stationDetails?.name }}</p>
+                <p>{{ stationDetails?.address }}</p>
+              </div>
+              <div class="marker-icon">
+                <i class="fas fa-bicycle"></i>
+               
+              </div>
+            </mgl-marker> 
+            <mgl-control mglNavigation position="top-left"></mgl-control>
+          </mgl-map>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="station-details-container">
+        <h2>{{ stationDetails?.name }}</h2>
+        <div class="property-value-container">
+          <div class="property-value">
+            <div class="value">Total number of journeys starting from the station:</div>
+            <div class="property">{{ stationDetails?.departureJourneyCount }}</div>
+          </div>
+          <div class="property-value">
+            <div class="value">Total number of journeys ending at the station:</div>
+            <div class="property">{{ stationDetails?.returnJourneyCount }}</div>
+          </div>
+          <div class="property-value">
+            <div class="value">The average distance of a journey starting from the station:</div>
+            <div class="property">{{ stationDetails?.averageDistanceOfDepartureJourneys }}</div>
+          </div>
+          <div class="property-value">
+            <div class="value">The average distance of a journey ending at the station:</div>
+            <div class="property">{{ stationDetails?.averageDistanceOfReturnJourneys }}</div>
+          </div>
+        
+            
+            <div class="value">
+              Top 5 most popular return stations for journeys starting from the station
+              <table class="table table-dark table-borderless">
+                <thead>
+                  <tr>
+                    <th>Station ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Count</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr *ngFor="let station of top5DepartureStations">
+                    <td>{{ station.id }}</td>
+                    <td>{{ station.name }}</td>
+                    <td>{{ station.address }}</td>
+                    <td>{{ station.count }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        
+            <div class="value">
+              Top 5 most popular departure stations for journeys ending at the station
+              <table class="table table-dark table-borderless">
+                <thead>
+                  <tr>
+                    <th>Station ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let station of top5ReturnStations">
+                    <td>{{ station.id }}</td>
+                    <td>{{ station.name }}</td>
+                    <td>{{ station.address }}</td>
+                    <td>{{ station.count }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            
+            </div>
+      
+        </div>
+      </div>
+    </div>
+  </div>

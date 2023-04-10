@@ -1,0 +1,88 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 15px;
+  margin-left: 15px;
+  border-radius: 0.5rem;
+  background-color: #faf8f8;
+}
+
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-check-input {
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -1.25rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.form-control-file {
+
+  z-index: 2;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  margin: 0;
+  opacity: 10;
+  border: solid 1px;
+  border-radius: 0.25rem;
+}
+.form-control-file:hover{
+  background-color: #9a9b9c;
+}
+label[for="journeyFile"] {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+label[for="journeyFile"]:hover {
+  background-color: #f8f9fa;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.fa-spinner {
+  color: #007bff;
+  font-size: 3em;
+}
+
+.fa-spin {
+  animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

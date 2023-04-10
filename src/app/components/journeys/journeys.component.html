@@ -1,0 +1,70 @@
+<div class="session-container">
+    <div class="row">
+        <div class="col-6 cell1">
+            <h2>Journey Start</h2>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <ng-select formControlName="departureStationId" [items]="departureStationOptions" bindLabel="name"
+                        placeholder="Search station" (change)="onSelectStation($event)" class="custom"
+                        [clearSearchOnAdd]="true"></ng-select>
+
+                </div>
+
+                <button *ngIf="completedJourneysCount === 0; else startTimerButton" type="submit"
+                    class="btn btn-primary" id="startButton">Start</button>
+                <ng-template #startTimerButton>
+                    <button type="submit" class="btn btn-primary" id="startButton" disabled>Started
+                        ({{completedJourneysCount}})</button>
+                </ng-template>
+            </form>
+        </div>
+        <div class="col-6 cell3">
+            <h2>Timer</h2>
+            <div class="timer">{{timeFormat}}</div>
+        </div>
+
+    </div>
+    <div class="row cell2">
+
+
+        <h2>Journey History</h2>
+        <div class="journey-list">
+            <div class="journey-item">
+
+                <div class="journey-id"><b>Started Time</b> &nbsp;&nbsp; </div>
+                <div class="journey-id"> <b>Started Station</b></div>
+                <div class="journey-id"><b>Retruned Time</b> </div>
+                <div class="journey-id"> <b>Returned Station</b></div>
+                <div class="journey-id"> <b>Distance</b></div>
+                <div class="journey-id">
+                    <b>Completed hours</b>
+                </div>
+            </div>
+            <div *ngFor="let journey of journeys" class="journey-item">
+                <div class="journey-id"> {{ journey.trip?.departure}}</div>
+                <div class="journey-id"><b>{{ journey.departureStation?.name }}</b> </div>
+                <div class="journey-id"> <b>{{ journey.returnStation?.name }}</b></div>
+                <div class="journey-id" [ngClass]="{'in-progress': !journey.completed}">
+                    {{ journey.completed ? journey.trip?.return : 'On Journey' }}
+                    <ng-container *ngIf="!journey.completed">
+                        <span class="dot-animation">.</span>
+                        <span class="dot-animation">.</span>
+                        <span class="dot-animation">.</span>
+                        <span class="dot-animation">.</span>
+                        <span class="dot-animation">.</span>
+                        <span class="dot-animation">.</span>
+                        <i class="fas fa-biking"></i>
+                    </ng-container>
+                </div>
+                <div class="journey-id"> {{ journey.completed ? journey.lengthInKiloMeters: '' }}</div>
+                <div class="journey-id">
+                    <button *ngIf="!journey.completed" (click)="startReturn(journey.trip?.id)"
+                        class="btn btn-secondary">Return</button>
+                    <button
+                        *ngIf="!journey.completed && journey.returnStationId !== null && journey.users.Id === currentUserId">Complete</button>
+                    <button *ngIf="journey.completed" disabled>Completed {{journey.formattedTime}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

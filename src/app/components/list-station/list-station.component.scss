@@ -1,0 +1,177 @@
+/* Responsive table */
+.table-responsive {
+  overflow-x: auto;
+  
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+}
+
+/* Table header styles */
+.th-heading {
+  text-align: left;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  padding: 12px 16px;
+}
+/* Table body styles */
+.tbody {
+  font-size: 14px;
+  font-weight: 300;
+  color: #444;
+}
+
+/* Table footer styles */
+.tfoot {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  background-color: #f2f2f2;
+  border-top: 1px solid #dee2e6;
+  padding: 12px 16px;
+}
+
+/* Input field styles */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Button styles */
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #0069d9;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+/*delete button style*/
+.delete-button {
+  position: relative;
+  padding-bottom: 0%;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/*position the bi-trash icon at the center*/
+.delete-button .bi-trash {
+  display: block;
+  margin: auto;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+
+.delete-button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+/* Content styles */
+.content {
+  margin: 0;
+  padding: 16px;
+}
+
+/* Th and td styles */
+th,
+td {
+  padding: 12px 16px;
+  vertical-align: middle;
+  text-align: left;
+}
+
+/* Row padding styles */
+tr td:first-child,
+tr th:first-child {
+  padding-left: 0;
+
+}
+
+tr td:last-child,
+tr th:last-child {
+  padding-right: 0;
+  line-height: normal;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+  .table {
+    font-size: 12px;
+  }
+
+  .th-heading {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .tbody {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .tfoot {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  th,
+  td {
+    padding: 8px 12px;
+  }
+}
+
+/* Sort Icons */
+.fa-sort-up:before {
+  content: "\f0de";
+}
+
+.fa-sort-down:before {
+  content: "\f0dd";
+}
+
+.fa-sort-both:before {
+  content: "\f0dc";
+}

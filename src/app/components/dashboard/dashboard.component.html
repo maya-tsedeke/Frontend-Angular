@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <h1 class="mt-3 mb-5">Finland Bike Station Operation Reading Dashboard</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header bg-primary text-white">Daily Stats</div>
+        <div class="card-body">
+          <p>Total distance: {{ dailyStats.totalDistance | number: '1.2-3' }} km</p>
+          <p>Total duration: {{ dailyStats.totalDuration | number: '1.2-3' }} hours</p>
+          <p>Average distance: {{ dailyStats.averageDistance | number: '1.2-3' }} km</p>
+          <p>Average duration: {{ dailyStats.averageDuration | number: '1.2-3' }} hours</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">Weekly Stats</div>
+        <div class="card-body">
+          <p>Total distance: {{ weeklyStats.totalDistance | number: '1.2-3' }} km</p>
+          <p>Total duration: {{ weeklyStats.totalDuration | number: '1.2-3' }} hours</p>
+          <p>Average distance: {{ weeklyStats.averageDistance | number: '1.2-3' }} km</p>
+          <p>Average duration: {{ weeklyStats.averageDuration | number: '1.2-3' }} hours</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header bg-info text-white">Monthly Stats</div>
+        <div class="card-body">
+          <p>Total distance: {{ monthlyStats.totalDistance | number: '1.2-3' }} km</p>
+          <p>Total duration: {{ monthlyStats.totalDuration | number: '1.2-3' }} hours</p>
+          <p>Average distance: {{ monthlyStats.averageDistance | number: '1.2-3' }} km</p>
+          <p>Average duration: {{ monthlyStats.averageDuration | number: '1.2-3' }} hours</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-header bg-warning text-white">Yearly Stats</div>
+        <div class="card-body">
+          <p>Total distance: {{ yearlyStats.totalDistance | number: '1.2-3' }} km</p>
+          <p>Total duration: {{ yearlyStats.totalDuration | number: '1.2-3' }} hours</p>
+          <p>Average distance: {{ yearlyStats.averageDistance | number: '1.2-3' }} km</p>
+          <p>Average duration: {{ yearlyStats.averageDuration | number: '1.2-3' }} hours</p>
+        </div>
+      </div>
+    </div>
+
+<div class="col-md-4">
+  <div class="card mb-4">
+    <div class="card-header bg-success text-white">Departure Count</div>
+    <div class="card-body">
+      <p>Today ({{ dailyStats.count }})</p>
+      <p>This Week ({{ weeklyStats.count }})</p>
+      <p>This Month ({{ monthlyStats.count }})</p>
+      <p>This year ({{ yearlyStats.count }})</p>
+        
+        <!--<button (click)="logOut()" class="btn btn-danger mb-3">Logout</button>
+        <ul class="list-group">
+          <li *ngFor="let user of users" class="list-group-item">{{user.fid}}</li>
+        </ul>-->
+ 
+    </div>
+  </div>
+</div>
+</div></div>

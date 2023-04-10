@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Select Databse Entity:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="dataType" id="station" value="station">
+                <label class="form-check-label" for="station">
+                    Bike Station
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="dataType" id="journey" value="journey">
+                <label class="form-check-label" for="journey">
+                    Journey
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="journeyFile">CSV File:</label>
+            <input type="file" (change)="onFileSelected($event)" class="form-control-file">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="instruction">Progress:</label>
+            <div *ngIf="loading" class="text-center">
+                <p>Loading...</p>
+                <i class="fa fa-spinner fa-spin fa-3x"></i>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button (click)="onUpload()" class="btn btn-sm btn-primary">Upload</button>
+    </div>
+</div>
