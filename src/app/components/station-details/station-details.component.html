@@ -6,7 +6,7 @@
         </h2>
         <div class="map-wrapper">
           <mgl-map
-            [style]="'https://api.maptiler.com/maps/streets/style.json?key=sfuWk9tJycblOOcoICP2'"
+            [style]="'your key'"
             [zoom]="[20]"
             [center]="[stationDetails?.location?.x || 0, stationDetails?.location?.y || 0]">
             <mgl-marker [lngLat]="[stationDetails?.location?.x || 0, stationDetails?.location?.y || 0]">
